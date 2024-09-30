@@ -38,6 +38,7 @@
         Director: ${movies.director},
         Year of release: ${movies.yearOfReleased}
         `);
+        document.getElementById("displayMovie").innerHTML = moviesDisplay ? moviesDisplay : "no movies available";
     }
 
     const  deleteMovies = () => {
