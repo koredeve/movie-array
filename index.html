@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Movie Array</title>
 </head>
 <body>
     <div>
@@ -11,7 +11,7 @@
     <button onclick="getAllMovies()">Get all Movies</button>
     <button onclick="deleteMovies()">Delete Movies</button>
     <button onclick="editMovies()">Edit Movies</button>
-<!--         no inputs -->
+      <!--         no inputs -->
     
     <div id="displayMovie"></div>
 
@@ -38,7 +38,6 @@
         Director: ${movies.director},
         Year of release: ${movies.yearOfReleased}
         `);
-        document.getElementById("displayMovie").innerHTML = moviesDisplay ? moviesDisplay : "no movies available";
     }
 
     const  deleteMovies = () => {
