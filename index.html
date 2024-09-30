@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+    <button onclick="addMovies()">Add Movies</button>
+    <button onclick="getAllMovies()">Get all Movies</button>
+    <button onclick="deleteMovies()">Delete Movies</button>
+    <button onclick="editMovies()">Add Movies</button>
+    
+    <div id="displayMovie"></div>
+
+    </div>
+</body>
+<script>
+    const allMovies = [];
+
+    
+    
+    const addMovies = () => {
+        let movies = {
+            title: "Tusla King",
+            director : "Rambo",
+            yearOfReleased: 2022
+        }
+        allMovies.push(movies)
+        document.getElementById('displayMovie').innerHTML = "Movie added successfuly"
+    }
+
+    const getAllMovies = () => {
+        let moviesDisplay = allMovies.map(movies => `
+        Title: ${movies.title},
+        Director: ${movies.director},
+        Year of release: ${movies.yearOfReleased}
+        `);
+        document.getElementById("displayMovie").innerHTML = moviesDisplay ? moviesDisplay : "no movies available";
+    }
+
+    const  deleteMovies = () => {
+        allMovies.splice(0, allMovies.length)
+        displayMovie.style.display = 'none';
+    }
+
+    const editMovies = () => {
+        const title = document.getElementById('movieTitleToEdit').value;
+        const index = allMovies.findIndex(movies => movies.title === title);
+        let newMovies = {
+            title: "updated Title",
+            director : "updated Director",
+            yearOfReleased: 'new year'
+        }
+        document.getElementById('displayMovie').innerHTML = 'Movie Edited'
+    }
+
+</script>
+</html>
